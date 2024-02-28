@@ -34,6 +34,9 @@ public class ShootingVin : MonoBehaviour
     public Sprite fullBullet;
     public Sprite EmptyBullet;
 
+    public GameObject expPrefab;
+    public GameObject SpawnSmoke;
+
     public void Start()
     {
         currentAmmo = maxAmmo; // при старте заполняем магазин полностью
@@ -117,6 +120,8 @@ public class ShootingVin : MonoBehaviour
         currentBullet.GetComponent<Rigidbody>().AddForce(dirWithSpread.normalized * shootForce, ForceMode.Impulse);
 
         vinchesterkAnimation.Play("VinAnim");
+        GameObject exp1 = Instantiate(expPrefab) as GameObject;
+        exp1.transform.position = SpawnSmoke.transform.position;
 
     }
 

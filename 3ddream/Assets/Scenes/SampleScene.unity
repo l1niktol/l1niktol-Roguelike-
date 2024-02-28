@@ -534,7 +534,6 @@ GameObject:
   - component: {fileID: 102581343}
   - component: {fileID: 102581344}
   - component: {fileID: 102581345}
-  - component: {fileID: 102581348}
   - component: {fileID: 102581347}
   - component: {fileID: 102581349}
   m_Layer: 8
@@ -631,23 +630,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &102581348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102581342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e0e8d31e5ea21d4f8a6ca35860ad6ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hand: {fileID: 975745775}
-  vinchester: {fileID: 102581342}
-  vinchesterkAnimation: {fileID: 102581347}
-  expPrefab: {fileID: 4530769950238781179, guid: 441b0e69058ae864ab490507ff4d0320, type: 3}
-  SpawnSmoke: {fileID: 1415745747}
 --- !u!114 &102581349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,6 +658,8 @@ MonoBehaviour:
   bullets: []
   fullBullet: {fileID: 21300000, guid: 39fc3affdb238b843af9d4f4f7981b95, type: 3}
   EmptyBullet: {fileID: 21300000, guid: ab7d8683b988c784da2ac2950df8b397, type: 3}
+  expPrefab: {fileID: 4530769950238781179, guid: 441b0e69058ae864ab490507ff4d0320, type: 3}
+  SpawnSmoke: {fileID: 1415745747}
 --- !u!4 &103184877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6b5fd43a7d67ce54585747249dc412ff, type: 3}
