@@ -15,10 +15,7 @@ public class Explosion : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-
-
         // Destroy(collision.gameObject);
-
         GameObject exp1 = Instantiate(exp1Prefab) as GameObject;
         exp1.transform.position = transform.position;
         GameObject exp2 = Instantiate(exp2Prefab) as GameObject;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9033722014296755246}
   - component: {fileID: 4831335351896918809}
   - component: {fileID: 4366964448428589318}
-  - component: {fileID: 8555195982019192358}
+  - component: {fileID: 2391360046451264409}
   m_Layer: 8
   m_Name: VinBullet
   m_TagString: Bullet
@@ -46,7 +46,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7141787714233942929}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &3312514392538120160
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -144,8 +144,8 @@ MonoBehaviour:
   exp1Prefab: {fileID: 2515256655267276883, guid: 939da5cce0962d34baab8e745212176e, type: 3}
   exp2Prefab: {fileID: 7881453443512599291, guid: 5890c6f5341c8b44095208e33459f7fb, type: 3}
   expLife: 3
---- !u!136 &8555195982019192358
-CapsuleCollider:
+--- !u!65 &2391360046451264409
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -162,11 +162,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.71462727
-  m_Height: 2.870254
-  m_Direction: 1
-  m_Center: {x: -0.027984083, y: -0.07639139, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 1.0000002, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7368324977463658037
 GameObject:
   m_ObjectHideFlags: 0

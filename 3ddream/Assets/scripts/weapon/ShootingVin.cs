@@ -18,7 +18,7 @@ public class ShootingVin : MonoBehaviour
 
 
     public int maxAmmo = 6; // максимальное количество патронов в магазине
-    public int totalAmmo = 50; // общее количество патронов у игрока
+    public int totalAmmo = 20; // общее количество патронов у игрока
     public int currentAmmo; // текущее количество патронов в магазине
     public float reloadTime = 2f; // время перезарядки в секундах
     public bool isReloading = false; // флаг, показывающий, идет ли перезарядка
@@ -44,7 +44,7 @@ public class ShootingVin : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && hand.activeSelf)
         {
             Shoot();
-            currentAmmo -= 1;
+            
         }
 
 
@@ -59,9 +59,17 @@ public class ShootingVin : MonoBehaviour
 
         }
 
-        if (maxAmmo > currentAmmo)
+        //if (maxAmmo > currentAmmo)
+        //{
+        //    maxAmmo = currentAmmo;
+        //}
+        if(currentAmmo == 0)
         {
-            maxAmmo = currentAmmo;
+            Reload();
+        }
+        if(totalAmmo == 0)
+        {
+            canShoot = false;
         }
         for (int i = 0; i < bullets.Length; i++)
         {
@@ -75,10 +83,7 @@ public class ShootingVin : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0) && GetComponent<Rigidbody>().isKinematic == true)
-        {
-            maxAmmo -= 1;
-        }
+       
     }
 
 
@@ -87,6 +92,7 @@ public class ShootingVin : MonoBehaviour
         if (!canShoot) //Если стрельба запрещена, то выходим из метода
             return;
 
+        currentAmmo -= 1;
 
         Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;

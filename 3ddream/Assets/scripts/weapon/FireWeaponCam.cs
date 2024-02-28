@@ -4,28 +4,12 @@ using UnityEngine;
 
 public class FireWeaponCam : MonoBehaviour
 {
-
    public Animator animator;
     public Camera camera;
     Coroutine zoomCoroutine;
 
     public GameObject VinforCam;
 
-   
-
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    if(Input.GetMouseButtonDown(1) && VinforCam.GetComponent<Rigidbody>().isKinematic == true)
-    //    {
-    //        animator.SetBool("aim", true);
-    //    }
-    //    if(Input.GetMouseButtonUp(1) && VinforCam.GetComponent<Rigidbody>().isKinematic == true)
-    //    {
-
-    //        animator.SetBool("aim", false);
-    //    }
-    //}
     void Update()
     {
         if (Input.GetMouseButtonDown(1) && VinforCam.GetComponent<Rigidbody>().isKinematic == true)

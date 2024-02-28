@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
     public GameObject hand;
 
     public GameObject aim;
+    public GameObject contforbullet;   
 
     public GameObject vinchester;
     public GameObject Stick;
@@ -26,7 +27,8 @@ public class Weapon : MonoBehaviour
     {
         hand.SetActive(false);
         aim.SetActive(false);
-        
+        contforbullet.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class Weapon : MonoBehaviour
 
         if (vinchester.GetComponent<Rigidbody>().isKinematic == true)
         {
+            contforbullet.SetActive(true);
             Stick.GetComponent<Shooting>().enabled = false;
             Sword.GetComponent<Shooting>().enabled = false;
 
@@ -45,14 +48,14 @@ public class Weapon : MonoBehaviour
         else if (Stick.GetComponent<Rigidbody>().isKinematic == true)
         {
             Sword.GetComponent<Shooting>().enabled = false;
-            vinchester.GetComponent<Shooting>().enabled = false;
+            vinchester.GetComponent<ShootingVin>().enabled = false;
 
             // Sword.GetComponent<Rigidbody>().isKinematic = true;
         }
         else if (Sword.GetComponent<Rigidbody>().isKinematic == true)
         {
             Stick.GetComponent<Shooting>().enabled = false;
-            vinchester.GetComponent<Shooting>().enabled = false;
+            vinchester.GetComponent<ShootingVin>().enabled = false;
         }
     }
     void Pickup()
@@ -87,7 +90,7 @@ public class Weapon : MonoBehaviour
         currenWeapon = null;
         hand.SetActive(false);
         aim.SetActive(false);
-        vinchester.GetComponent<Shooting>().enabled = true;
+        vinchester.GetComponent<ShootingVin>().enabled = true;
         Stick.GetComponent<Shooting>().enabled = true;
         Sword.GetComponent<Shooting>().enabled = true;
     }
