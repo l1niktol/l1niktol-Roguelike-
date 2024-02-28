@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 public class Weapon : MonoBehaviour
 {
     public GameObject camera;
@@ -18,11 +19,14 @@ public class Weapon : MonoBehaviour
     public GameObject Stick;
     public GameObject Sword;
 
+    
+
 
     void Start()
     {
         hand.SetActive(false);
         aim.SetActive(false);
+        
     }
 
     // Update is called once per frame
