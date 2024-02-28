@@ -27,7 +27,7 @@ public class ShootingVin : MonoBehaviour
     //  public AudioClip reloadSound; // звук перезарядки
     //  public Text currentAmmoText; // текстовый элемент для отображения патронов в магазине
     //  public Text totalAmmoText; // текстовый элемент для отображения общего количества патронов
-
+    public Animator vinchesterkAnimation;
 
     public Image[] bullets;
 
@@ -115,14 +115,8 @@ public class ShootingVin : MonoBehaviour
         currentBullet.transform.forward = dirWithSpread.normalized;
 
         currentBullet.GetComponent<Rigidbody>().AddForce(dirWithSpread.normalized * shootForce, ForceMode.Impulse);
-        //if (character.isDead || ammo == 0 || Time.time < nextShootTime)
-        //{
-        //    canShoot = false;
-        //}
-        //else
-        //{
-        //    canShoot = true;
-        //}
+
+        vinchesterkAnimation.Play("VinAnim");
 
     }
 

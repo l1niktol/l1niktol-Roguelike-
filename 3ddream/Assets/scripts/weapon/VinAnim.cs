@@ -17,8 +17,8 @@ public class VinAnim : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && hand.activeSelf && vinchester.GetComponent<Rigidbody>().isKinematic == true)
         {
-            vinchesterkAnimation.Play("VinAnim");
-            vinchesterkAnimation.SetBool("Shoot", true);
+           // vinchesterkAnimation.Play("VinAnim");
+           // vinchesterkAnimation.SetBool("Shoot", true);
             GameObject exp1 = Instantiate(expPrefab) as GameObject;
             exp1.transform.position = SpawnSmoke.transform.position;
             
