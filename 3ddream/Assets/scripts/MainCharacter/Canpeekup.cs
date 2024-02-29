@@ -40,6 +40,7 @@ public class Weapon : MonoBehaviour
         if (vinchester.GetComponent<Rigidbody>().isKinematic == true)
         {
             contforbullet.SetActive(true);
+            vinchester.GetComponent<Outline>().enabled = false;
             Stick.GetComponent<Shooting>().enabled = false;
             Sword.GetComponent<Shooting>().enabled = false;
 
@@ -47,6 +48,7 @@ public class Weapon : MonoBehaviour
         }
         else if (Stick.GetComponent<Rigidbody>().isKinematic == true)
         {
+            Stick.GetComponent<Outline>().enabled = false;
             Sword.GetComponent<Shooting>().enabled = false;
             vinchester.GetComponent<ShootingVin>().enabled = false;
 
@@ -54,6 +56,7 @@ public class Weapon : MonoBehaviour
         }
         else if (Sword.GetComponent<Rigidbody>().isKinematic == true)
         {
+            Sword.GetComponent<Outline>().enabled = false;
             Stick.GetComponent<Shooting>().enabled = false;
             vinchester.GetComponent<ShootingVin>().enabled = false;
         }

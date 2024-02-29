@@ -18,11 +18,10 @@ public class ShootingVin : MonoBehaviour
 
 
     public int maxAmmo = 6; // максимальное количество патронов в магазине
-    public int totalAmmo = 20; // общее количество патронов у игрока
-    public int currentAmmo; // текущее количество патронов в магазине
-    public float reloadTime = 2f; // время перезарядки в секундах
-    public bool isReloading = false; // флаг, показывающий, идет ли перезарядка
-    // public Animator animator; 
+    public int totalAmmo = 20; // общее количество патронов
+    public int currentAmmo; // текущее количество патронов 
+    public float reloadTime = 2f; // время перезарядки
+    public bool isReloading = false;
     //  public AudioSource audioSource; // компонент аудиоисточника
     //  public AudioClip reloadSound; // звук перезарядки
     //  public Text currentAmmoText; // текстовый элемент для отображения патронов в магазине
@@ -126,8 +125,8 @@ void Reload()
         return;
 
         isReloading = true; // устанавливаем флаг перезарядки
-       
-        //  animator.SetBool("Reloading", true); // запускаем анимацию перезарядки
+
+        vinchesterkAnimation.SetBool("Reloading", true); // запускаем анимацию перезарядки
         //   audioSource.PlayOneShot(reloadSound); // проигрываем звук перезарядки
         canShoot = false; 
        
@@ -137,7 +136,7 @@ void Reload()
 void FinishReload()
 {
         isReloading = false; // сбрасываем флаг перезарядки
-        //   animator.SetBool("Reloading", false); // останавливаем анимацию перезарядки
+        vinchesterkAnimation.SetBool("Reloading", false); // останавливаем анимацию перезарядки
         canShoot = true;      
         int ammoToReload = Mathf.Min(maxAmmo - currentAmmo, totalAmmo);// вычисляем, сколько патронов нужно добавить в магазин
         totalAmmo -= ammoToReload;// уменьшаем общее количество патронов у игрока на это число

@@ -27,20 +27,7 @@ public class weapon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)) Pickup();
         if (Input.GetKeyDown(KeyCode.Q)) Drop();
-        //      if(vinchester.GetComponent<Rigidbody>().isKinematic == true;)
-        //    {
-        //         Stick.GetComponent<Shooting>().SetActive(false);
-        //         // Sword.GetComponent<Rigidbody>().isKinematic = true;
-        //    }
-        //    else  (Stick.GetComponent<Rigidbody>().isKinematic == true;)
-        //    {
-        //         vinchester.GetComponent<Shooting>().SetActive(false);
-        //         // Sword.GetComponent<Rigidbody>().isKinematic = true;
-        //    }
-        // //    else{
-        // //         Debug.Log("this is sword");
-        // //    }
-        // }
+        
         void Pickup()
         {
             RaycastHit hit;
