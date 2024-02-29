@@ -44,7 +44,7 @@ public class Weapon : MonoBehaviour
             Stick.GetComponent<Shooting>().enabled = false;
             Sword.GetComponent<Shooting>().enabled = false;
 
-            // Sword.GetComponent<Rigidbody>().isKinematic = true;
+       
         }
         else if (Stick.GetComponent<Rigidbody>().isKinematic == true)
         {
@@ -52,7 +52,7 @@ public class Weapon : MonoBehaviour
             Sword.GetComponent<Shooting>().enabled = false;
             vinchester.GetComponent<ShootingVin>().enabled = false;
 
-            // Sword.GetComponent<Rigidbody>().isKinematic = true;
+           
         }
         else if (Sword.GetComponent<Rigidbody>().isKinematic == true)
         {
@@ -89,6 +89,7 @@ public class Weapon : MonoBehaviour
     {
         currenWeapon.transform.parent = null;
         currenWeapon.GetComponent<Rigidbody>().isKinematic = false;
+        currenWeapon.GetComponent<Outline>().enabled = true;
         canPickUp = false;
         currenWeapon = null;
         hand.SetActive(false);

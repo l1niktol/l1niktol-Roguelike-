@@ -14,14 +14,21 @@ public class Shooting : MonoBehaviour
 
     public GameObject hand;
 
-    
+
+    public float fireRate = 0.5f; 
+    private float lastFireTime; 
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && hand.activeSelf)
         {
-            Shoot();
+                if (Time.time - lastFireTime >= fireRate)
+                {
+                    Shoot();
+                    lastFireTime = Time.time;
+                }
         }
-        
+
     }
         private void Shoot()
         {

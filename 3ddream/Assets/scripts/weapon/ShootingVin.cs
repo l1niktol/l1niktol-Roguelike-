@@ -9,8 +9,8 @@ public class ShootingVin : MonoBehaviour
     public Camera mainCamera;
     public Transform spawnBullet;
 
-    public float shootForce;
-    public float spread;
+    public float shootForce;//сила выстрела
+    public float spread; // разброс
 
     public GameObject hand;
     public bool canShoot = true;
@@ -28,13 +28,18 @@ public class ShootingVin : MonoBehaviour
     //  public Text totalAmmoText; // текстовый элемент для отображения общего количества патронов
     public Animator vinchesterkAnimation;
 
-    public Image[] bullets;
+    public Image[] bullets; //массив аикч
 
-    public Sprite fullBullet;
-    public Sprite EmptyBullet;
+    public Sprite fullBullet; //пикчи фулл
+    public Sprite EmptyBullet; //пикчи пустых
 
-    public GameObject expPrefab;
-    public GameObject SpawnSmoke;
+    public GameObject expPrefab; //префаб дыма
+    public GameObject SpawnSmoke; //спавн
+
+
+
+    public float fireRate = 0.5f; // задержка в секундах между выстрелами
+    private float lastFireTime; // время последнего выстрела
 
     public void Start()
     {
@@ -45,7 +50,18 @@ public class ShootingVin : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && hand.activeSelf)
         {
-            Shoot();
+            if (Input.GetMouseButton(0))
+            {
+                // если прошло достаточно времени с последнего выстрела
+                if (Time.time - lastFireTime >= fireRate)
+                {
+                    // производим выстрел
+                    Shoot();
+                    // обновляем время последнего выстрела
+                    lastFireTime = Time.time;
+                }
+            }
+            
             
         }
         if (isReloading) // если идет перезарядка, то ничего не делаем
