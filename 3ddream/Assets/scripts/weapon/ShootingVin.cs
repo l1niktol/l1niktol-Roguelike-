@@ -49,10 +49,6 @@ public class ShootingVin : MonoBehaviour
             Shoot();
             
         }
-
-
-
-
         if (isReloading) // если идет перезарядка, то ничего не делаем
             return;
 
@@ -70,7 +66,7 @@ public class ShootingVin : MonoBehaviour
         {
             Reload();
         }
-        if(totalAmmo == 0)
+        if(totalAmmo == 0 && currentAmmo == 0)
         {
             canShoot = false;
         }
@@ -84,9 +80,7 @@ public class ShootingVin : MonoBehaviour
             {
                 bullets[i].sprite = EmptyBullet;
             }
-        }
-
-       
+        }       
     }
 
 
@@ -128,33 +122,28 @@ public class ShootingVin : MonoBehaviour
 
 void Reload()
 {
-    if (totalAmmo == 0) // если у игрока нет патронов, то ничего не делаем
+        if (totalAmmo == 0 ) // если у игрока нет патронов, то ничего не делаем
         return;
 
-    isReloading = true; // устанавливаем флаг перезарядки
-                        //  animator.SetBool("Reloading", true); // запускаем анимацию перезарядки
-                        //   audioSource.PlayOneShot(reloadSound); // проигрываем звук перезарядки
-        canShoot = false;
-        // вызываем метод FinishReload через reloadTime секунд
-        Invoke("FinishReload", reloadTime);
+        isReloading = true; // устанавливаем флаг перезарядки
+       
+        //  animator.SetBool("Reloading", true); // запускаем анимацию перезарядки
+        //   audioSource.PlayOneShot(reloadSound); // проигрываем звук перезарядки
+        canShoot = false; 
+       
+        Invoke("FinishReload", reloadTime); // вызываем метод FinishReload через reloadTime секунд
 }
 
 void FinishReload()
 {
-    isReloading = false; // сбрасываем флаг перезарядки
-                         //   animator.SetBool("Reloading", false); // останавливаем анимацию перезарядки
-        canShoot = true;
-        // вычисляем, сколько патронов нужно добавить в магазин
-        int ammoToReload = Mathf.Min(maxAmmo - currentAmmo, totalAmmo);
-
-    // уменьшаем общее количество патронов у игрока на это число
-    totalAmmo -= ammoToReload;
-
-    // увеличиваем текущее количество патронов в магазине на это число
-    currentAmmo += ammoToReload;
-
-    //   UpdateAmmoUI(); // обновляем текстовые элементы
-}
+        isReloading = false; // сбрасываем флаг перезарядки
+        //   animator.SetBool("Reloading", false); // останавливаем анимацию перезарядки
+        canShoot = true;      
+        int ammoToReload = Mathf.Min(maxAmmo - currentAmmo, totalAmmo);// вычисляем, сколько патронов нужно добавить в магазин
+        totalAmmo -= ammoToReload;// уменьшаем общее количество патронов у игрока на это число
+        currentAmmo += ammoToReload;// увеличиваем текущее количество патронов в магазине на это число
+        //   UpdateAmmoUI(); // обновляем текстовые элементы
+    }
 
     //void UpdateAmmoUI()
     //{
