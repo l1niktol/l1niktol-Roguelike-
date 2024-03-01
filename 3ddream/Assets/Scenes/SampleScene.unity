@@ -636,6 +636,7 @@ MonoBehaviour:
   EmptyBullet: {fileID: 21300000, guid: ab7d8683b988c784da2ac2950df8b397, type: 3}
   expPrefab: {fileID: 4530769950238781179, guid: 441b0e69058ae864ab490507ff4d0320, type: 3}
   SpawnSmoke: {fileID: 1415745747}
+  fireRate: 0.5
 --- !u!114 &102581350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,10 +779,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 125936843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d9845647805dd44f8093d07293d007b, type: 3}
+  m_Script: {fileID: 11500000, guid: f49d574a1b04ea74999270574449f3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  health: 100
+  maxHealth: 100
 --- !u!1001 &126702119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8262,6 +8264,7 @@ MonoBehaviour:
   shootForce: 15
   spread: 0
   hand: {fileID: 174302387}
+  fireRate: 0.5
 --- !u!114 &943107449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10945,6 +10948,7 @@ MonoBehaviour:
   shootForce: 50
   spread: 0
   hand: {fileID: 174302387}
+  fireRate: 0.5
 --- !u!54 &2024752673
 Rigidbody:
   m_ObjectHideFlags: 0
