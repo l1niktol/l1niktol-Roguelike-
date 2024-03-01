@@ -7,8 +7,7 @@ public class Enemydayn : MonoBehaviour
     // Start is called before the first frame update
 
     public float speed = 1.0f;
-    public float health = 100;
-    public float damage = 20;
+    
 
 
    
