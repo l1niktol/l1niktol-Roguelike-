@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Animations;
+using static UnityEditor.Progress;
 
 
 public class Weapon : MonoBehaviour
@@ -12,6 +14,7 @@ public class Weapon : MonoBehaviour
     bool canPickUp;
 
     public GameObject hand;
+    
 
     public GameObject aim;
     
@@ -96,7 +99,9 @@ public class Weapon : MonoBehaviour
         currenWeapon = null;
         hand.SetActive(false);
         aim.SetActive(false);
+
         
+
         vinchester.GetComponent<ShootingVin>().enabled = true;
         Stick.GetComponent<Shooting>().enabled = true;
         Sword.GetComponent<Shooting>().enabled = true;
