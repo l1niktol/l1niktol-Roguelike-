@@ -85,17 +85,17 @@ public class ShootingVin : MonoBehaviour
         {
             canShoot = false;
         }
-        for (int i = 0; i < bullets.Length; i++)
-        {
-            if (i < maxAmmo)
-            {
-                bullets[i].sprite = fullBullet;
-            }
-            else
-            {
-                bullets[i].sprite = EmptyBullet;
-            }
-        }       
+        //for (int i = 0; i < bullets.Length; i++)
+        //{
+        //    if (i < maxAmmo)
+        //    {
+        //        bullets[i].sprite = fullBullet;
+        //    }
+        //    else
+        //    {
+        //        bullets[i].sprite = EmptyBullet;
+        //    }
+        //}       
     }
 
 

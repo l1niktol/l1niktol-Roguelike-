@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
     public GameObject hand;
 
     public GameObject aim;
-    public GameObject contforbullet;   
+    
 
     public GameObject vinchester;
     public GameObject Stick;
@@ -27,7 +27,7 @@ public class Weapon : MonoBehaviour
     {
         hand.SetActive(false);
         aim.SetActive(false);
-        contforbullet.SetActive(false);
+      
 
     }
 
@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
 
         if (vinchester.GetComponent<Rigidbody>().isKinematic == true)
         {
-            contforbullet.SetActive(true);
+           
             vinchester.GetComponent<Outline>().enabled = false;
             Stick.GetComponent<Shooting>().enabled = false;
             Sword.GetComponent<Shooting>().enabled = false;
@@ -73,6 +73,7 @@ public class Weapon : MonoBehaviour
 
                 currenWeapon = hit.transform.gameObject;
                 currenWeapon.GetComponent<Rigidbody>().isKinematic = true;
+                currenWeapon.GetComponent<Collider>().isTrigger = true;
                 currenWeapon.transform.parent = transform;
                 currenWeapon.transform.localPosition = Vector3.zero;
                 currenWeapon.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
@@ -89,12 +90,13 @@ public class Weapon : MonoBehaviour
     {
         currenWeapon.transform.parent = null;
         currenWeapon.GetComponent<Rigidbody>().isKinematic = false;
+        currenWeapon.GetComponent<Collider>().isTrigger = false;
         currenWeapon.GetComponent<Outline>().enabled = true;
         canPickUp = false;
         currenWeapon = null;
         hand.SetActive(false);
         aim.SetActive(false);
-        contforbullet.SetActive(false);
+        
         vinchester.GetComponent<ShootingVin>().enabled = true;
         Stick.GetComponent<Shooting>().enabled = true;
         Sword.GetComponent<Shooting>().enabled = true;

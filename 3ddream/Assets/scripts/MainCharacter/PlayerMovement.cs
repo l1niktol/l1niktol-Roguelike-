@@ -50,14 +50,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded)
         {
-            //Debug.Log("penis");
+            
             speed *= boostMultiplier;
         }
         else
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed /= boostMultiplier;
-            // Debug.Log("SuperPenis");
+            
         }
         if (speed < 12f || speed > speed * boostMultiplier)
             speed = 12f;
