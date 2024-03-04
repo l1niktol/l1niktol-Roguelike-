@@ -26,7 +26,7 @@ public class ShootingVin : MonoBehaviour
     //  public AudioClip reloadSound; // звук перезарядки
     //  public Text currentAmmoText; // текстовый элемент для отображения патронов в магазине
     //  public Text totalAmmoText; // текстовый элемент для отображения общего количества патронов
-    public Animator vinchesterkAnimation;
+    public Animator vinchesterAnimation;
 
     public Image[] bullets; //массив аикч
 
@@ -128,7 +128,7 @@ public class ShootingVin : MonoBehaviour
 
         currentBullet.GetComponent<Rigidbody>().AddForce(dirWithSpread.normalized * shootForce, ForceMode.Impulse);
 
-        vinchesterkAnimation.Play("VinAnim");
+        vinchesterAnimation.Play("VinAnim");
         GameObject exp1 = Instantiate(expPrefab) as GameObject;
         exp1.transform.position = SpawnSmoke.transform.position;
 
@@ -142,7 +142,7 @@ void Reload()
 
         isReloading = true; // устанавливаем флаг перезарядки
 
-        vinchesterkAnimation.SetBool("Reloading", true); // запускаем анимацию перезарядки
+        vinchesterAnimation.SetBool("Reloading", true); // запускаем анимацию перезарядки
         //   audioSource.PlayOneShot(reloadSound); // проигрываем звук перезарядки
         canShoot = false; 
        
@@ -152,7 +152,7 @@ void Reload()
 void FinishReload()
 {
         isReloading = false; // сбрасываем флаг перезарядки
-        vinchesterkAnimation.SetBool("Reloading", false); // останавливаем анимацию перезарядки
+        vinchesterAnimation.SetBool("Reloading", false); // останавливаем анимацию перезарядки
         canShoot = true;      
         int ammoToReload = Mathf.Min(maxAmmo - currentAmmo, totalAmmo);// вычисляем, сколько патронов нужно добавить в магазин
         totalAmmo -= ammoToReload;// уменьшаем общее количество патронов у игрока на это число

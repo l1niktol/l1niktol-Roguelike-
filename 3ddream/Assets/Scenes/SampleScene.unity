@@ -446,7 +446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102581342}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.241, y: 6.583, z: -2.141}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -502,8 +502,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 7.5725594}
-  m_Center: {x: 0, y: 0, z: 1.8881539}
+  m_Size: {x: 0.49629354, y: 1.5173192, z: 7.262295}
+  m_Center: {x: 0.02042079, y: -0.05445409, z: 1.8650746}
 --- !u!95 &102581347
 Animator:
   serializedVersion: 5
@@ -549,7 +549,7 @@ MonoBehaviour:
   currentAmmo: 0
   reloadTime: 2
   isReloading: 0
-  vinchesterkAnimation: {fileID: 102581347}
+  vinchesterAnimation: {fileID: 102581347}
   bullets:
   - {fileID: 0}
   - {fileID: 0}
@@ -10263,8 +10263,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d61ea5d1520322845951a9bc9d26bef4, type: 3}
   m_PrefabInstance: {fileID: 216147138}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1956771291
-CapsuleCollider:
+--- !u!65 &1956771291
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10281,11 +10281,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.21894741
-  m_Height: 4.675884
-  m_Direction: 1
-  m_Center: {x: 0.021995544, y: 0.407161, z: -0.028213859}
+  serializedVersion: 3
+  m_Size: {x: 0.43517864, y: 4.2503963, z: 0.44833806}
+  m_Center: {x: 0.015212809, y: 0.36070722, z: 0.0018419964}
 --- !u!1 &1978529127 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 98ee8da76596005439fb179a59742114, type: 3}
@@ -10468,6 +10466,7 @@ GameObject:
   - component: {fileID: 2024752673}
   - component: {fileID: 2024752675}
   - component: {fileID: 2024752674}
+  - component: {fileID: 2024752677}
   m_Layer: 8
   m_Name: Stick
   m_TagString: Weapon
@@ -10483,8 +10482,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024752667}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0008726948, y: 0, z: 0, w: 0.99999964}
-  m_LocalPosition: {x: -4.5, y: 2.81, z: 2.86}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.748, y: 2.9438877, z: 2.3610516}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10493,7 +10492,7 @@ Transform:
   - {fileID: 508286218}
   - {fileID: 45662590}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0.1, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2024752671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10615,6 +10614,20 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &2024752677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024752667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db97461b8da6c5d47bd5508d3941d3e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2024752673}
+  maxSpeed: 0
 --- !u!1001 &2090904985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10815,10 +10828,10 @@ SceneRoots:
   m_Roots:
   - {fileID: 705507995}
   - {fileID: 409850743}
-  - {fileID: 102581343}
   - {fileID: 700050748}
   - {fileID: 2024752668}
   - {fileID: 943107447}
+  - {fileID: 102581343}
   - {fileID: 1276048298}
   - {fileID: 1653516154}
   - {fileID: 77906061}
