@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletLife: 3
+  damage: 20
 --- !u!65 &5858446025311518276
 BoxCollider:
   m_ObjectHideFlags: 0
