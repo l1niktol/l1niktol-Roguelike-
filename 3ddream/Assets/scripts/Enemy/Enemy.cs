@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
     public float health = 100f;
 
 
-
+    public GameObject expPrefab; //префаб дыма
+    public GameObject SpawnDestroy; //спавн
     // Update is called once per frame
     void Update()
     {
@@ -23,6 +24,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            GameObject exp1 = Instantiate(expPrefab) as GameObject;
+            exp1.transform.position = SpawnDestroy.transform.position;
         }
     }
 

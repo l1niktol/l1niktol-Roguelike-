@@ -550,13 +550,7 @@ MonoBehaviour:
   reloadTime: 2
   isReloading: 0
   vinchesterAnimation: {fileID: 102581347}
-  bullets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  bullets: []
   fullBullet: {fileID: 21300000, guid: 39fc3affdb238b843af9d4f4f7981b95, type: 3}
   EmptyBullet: {fileID: 21300000, guid: ab7d8683b988c784da2ac2950df8b397, type: 3}
   expPrefab: {fileID: 4530769950238781179, guid: 441b0e69058ae864ab490507ff4d0320, type: 3}
@@ -641,8 +635,8 @@ Transform:
   m_GameObject: {fileID: 125936843}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.738, y: 13.27, z: -3.0566}
-  m_LocalScale: {x: 3.3688, y: 3.3688, z: 3.3688}
+  m_LocalPosition: {x: -23.738, y: 7.33, z: -3.0566}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1176826706}
@@ -709,6 +703,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   health: 100
+  expPrefab: {fileID: 7970907559117741634, guid: 45bc122a223ecd74d881e1c546d708db, type: 3}
+  SpawnDestroy: {fileID: 1978529127}
 --- !u!1001 &126702119
 PrefabInstance:
   m_ObjectHideFlags: 0
