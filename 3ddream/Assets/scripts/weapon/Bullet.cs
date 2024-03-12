@@ -5,11 +5,23 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float bulletLife = 3;
-    public float damage = 1f;
+
+    [SerializeField]
+    private float minRange = 0f;
+
+    [SerializeField]
+    private float maxRange = 1f;
+
+    private float damage;
+    
 
     private void Awake()
     {
         Destroy(gameObject, bulletLife);
+    }
+    public void Start()
+    {
+        damage = Mathf.FloorToInt(Random.Range(minRange, maxRange));
     }
 
     private void OnCollisionEnter(Collision collision)

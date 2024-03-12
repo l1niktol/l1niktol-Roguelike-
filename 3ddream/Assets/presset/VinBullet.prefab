@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletLife: 3
-  damage: 10
+  minRange: 15
+  maxRange: 25
 --- !u!114 &4366964448428589318
 MonoBehaviour:
   m_ObjectHideFlags: 0
