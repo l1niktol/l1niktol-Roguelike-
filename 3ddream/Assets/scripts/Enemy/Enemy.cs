@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Enemy : MonoBehaviour
 
     public float speed = 1.0f;
     public float health = 100f;
+    public Slider HPbar;
 
 
     public GameObject expPrefab; //ןנופאב הûלא
@@ -16,6 +18,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        HPbar.value = health;
 
     }
     public void TakeDamage(float damage)
