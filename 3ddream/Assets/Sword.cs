@@ -1,0 +1,84 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class Sword : MonoBehaviour
+{
+    public GameObject bullet;
+    public Camera mainCamera;
+    public Transform spawnBullet;
+
+    public float shootForce;
+    public float spread;
+
+    public GameObject hand;
+
+
+    public float fireRate = 0.5f;
+    private float lastFireTime;
+    [SerializeField]
+    private float minRange = 0f;
+
+    [SerializeField]
+    private float maxRange = 1f;
+
+    private float damage;
+
+
+    private void Start()
+    {
+        damage = Mathf.FloorToInt(Random.Range(minRange, maxRange));
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && hand.activeSelf)
+        {
+            if (Time.time - lastFireTime >= fireRate)
+            {
+                Shoot();
+                lastFireTime = Time.time;
+            }
+        }
+
+    }
+    private void Shoot()
+    {
+        Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+
+        Vector3 targetPoint;
+        if (Physics.Raycast(ray, out hit))
+            targetPoint = hit.point;
+        else
+            targetPoint = ray.GetPoint(75);
+
+        Vector3 dirWithoutSpread = targetPoint - spawnBullet.position;
+
+        float x = Random.Range(-spread, spread);
+        float y = Random.Range(-spread, spread);
+
+        Vector3 dirWithSpread = dirWithoutSpread + new Vector3(x, y, 0);
+
+        GameObject currentBullet = Instantiate(bullet, spawnBullet.position, Quaternion.identity);
+
+        currentBullet.transform.forward = dirWithSpread.normalized;
+
+        currentBullet.GetComponent<Rigidbody>().AddForce(dirWithSpread.normalized * shootForce, ForceMode.Impulse);
+
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
+
+    }
+}
+

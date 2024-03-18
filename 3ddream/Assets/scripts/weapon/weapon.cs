@@ -39,7 +39,7 @@ public class weapon : MonoBehaviour
                     if (canPickUp) Drop();
 
                     currenWeapon = hit.transform.gameObject;
-                    currenWeapon.GetComponent<Rigidbody>().isKinematic = true;
+                    currenWeapon.GetComponent<Collider>().isTrigger = true;
                     currenWeapon.transform.parent = transform;
                     currenWeapon.transform.localPosition = Vector3.zero;
                     currenWeapon.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
@@ -54,7 +54,7 @@ public class weapon : MonoBehaviour
         void Drop()
         {
             currenWeapon.transform.parent = null;
-            currenWeapon.GetComponent<Rigidbody>().isKinematic = false;
+            currenWeapon.GetComponent<Collider>().isTrigger = false;
             canPickUp = false;
             currenWeapon = null;
             hand.SetActive(false);

@@ -8131,6 +8131,7 @@ GameObject:
   - component: {fileID: 943107445}
   - component: {fileID: 943107448}
   - component: {fileID: 943107449}
+  - component: {fileID: 943107450}
   m_Layer: 8
   m_Name: Sword
   m_TagString: Weapon
@@ -8212,7 +8213,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943107444}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd54798ab9537d34783276582bcc4b7d, type: 3}
   m_Name: 
@@ -8242,6 +8243,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &943107450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943107444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6521f9412b91734dba229144be20f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5167685503619501052, guid: d9493222851e72f419ba8cc2e75ab2f9, type: 3}
+  mainCamera: {fileID: 963194227}
+  spawnBullet: {fileID: 812754890}
+  shootForce: 0
+  spread: 0
+  hand: {fileID: 174302387}
+  fireRate: 0.5
+  minRange: 40
+  maxRange: 50
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -10112,6 +10134,7 @@ GameObject:
   - component: {fileID: 1892538148}
   - component: {fileID: 1892538147}
   - component: {fileID: 1892538146}
+  - component: {fileID: 1892538149}
   m_Layer: 5
   m_Name: ' EnemyCanvas'
   m_TagString: Untagged
@@ -10202,6 +10225,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1892538149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892538144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5319c9ff23eef419be523b9fba01c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 963194228}
 --- !u!4 &1910510666 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fa1ff676b6f8e1a4f8b8da3094862bf8, type: 3}
